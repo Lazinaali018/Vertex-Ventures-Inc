@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cinnamon – Spices By Vertex Ventures Inc</title>
+  <meta name="description" content="Learn about the varieties, characteristics, and uses of Cinnamon (Cinnamomum verum) from Spices by Vertex Ventures Inc.">
+  <meta property="og:title" content="Cinnamon – Spices By Vertex Ventures Inc" />
+  <meta property="og:description" content="Explore the world of Cinnamon: Ceylon, Cassia, Saigon, Korintje & more." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="bg-yellow-50 font-sans text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-yellow-100 p-6 shadow-md">
+    <h1 class="text-3xl font-bold text-center text-yellow-700">
+      <a href="index.html" class="hover:underline hover:text-yellow-800">
+        🌿 Spices By Vertex Ventures Inc
+      </a>
+    </h1>
+    <p class="text-center text-sm text-gray-600">Pure | Aromatic | Authentic</p>
+  </header>
+
+  <!-- Back to Home Link -->
+  <div class="max-w-5xl mx-auto mt-6 px-4">
+    <a href="index.html" class="text-yellow-600 hover:text-yellow-800 hover:underline text-sm">
+      ← Back to Home
+    </a>
+  </div>
+
+  <!-- Container -->
+  <section class="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-10 items-start">
+
+    <!-- Carousel Section -->
+    <div x-data="{
+      images: [
+        'product images/Cinnamon.jpg',
+        'product images/cinnamon-stick-514243.jpg',
+        'product images/cinnamon2.jpg'
+      ],
+      current: 0
+    }" class="relative" x-init="$nextTick(() => setInterval(() => current = (current + 1) % images.length, 5000))">
+      <div class="bg-white p-4 rounded-xl shadow-md">
+        <img :src="images[current]" :alt="'Cinnamon image ' + (current + 1)" class="rounded-xl w-full h-96 sm:h-72 object-cover transition duration-500 ease-in-out">
+      </div>
+
+      <!-- Carousel Controls -->
+      <div class="flex justify-center items-center mt-4 space-x-4">
+        <button @click="current = current === 0 ? images.length - 1 : current - 1"
+                class="bg-yellow-300 text-yellow-800 p-2 rounded-full shadow hover:bg-yellow-400 transition">
+          &#8592;
+        </button>
+
+        <div class="flex space-x-2">
+          <template x-for="(img, index) in images" :key="index">
+            <button @click="current = index"
+                    :class="{'bg-yellow-600': current === index, 'bg-yellow-300': current !== index}"
+                    class="w-3 h-3 rounded-full transition-colors duration-200"></button>
+          </template>
+        </div>
+
+        <button @click="current = (current + 1) % images.length"
+                class="bg-yellow-300 text-yellow-800 p-2 rounded-full shadow hover:bg-yellow-400 transition">
+          &#8594;
+        </button>
+      </div>
+    </div>
+
+    <!-- Product Description -->
+    <div>
+      <h2 class="text-2xl font-bold text-yellow-700 mb-4">Cinnamon (Cinnamomum verum) – Overview & Varieties</h2>
+
+      <div class="mb-6">
+        <h3 class="text-xl font-semibold mb-2">Introduction</h3>
+        <p>Cinnamon, a fragrant and sweet spice, is obtained from the inner bark of trees belonging to the <em>Cinnamomum</em> genus. Known for its warm aroma and distinct flavor, it is widely used in culinary, medicinal, and cosmetic applications around the world.</p>
+        <ul class="list-disc list-inside mt-2 space-y-1">
+          <li><strong>Scientific Name:</strong> <em>Cinnamomum verum</em> (True Cinnamon) or <em>Cinnamomum cassia</em></li>
+          <li><strong>Family:</strong> Lauraceae</li>
+          <li><strong>Native Origin:</strong> Sri Lanka and Southern India</li>
+          <li><strong>Leading Producing Countries:</strong> Sri Lanka, Indonesia, China, Vietnam, India</li>
+          <li><strong>Major Indian Producing States:</strong> Kerala, Tamil Nadu, Karnataka</li>
+          <li><strong>Harvesting Season:</strong> May to October</li>
+        </ul>
+      </div>
+
+      <div class="mb-6">
+        <h3 class="text-xl font-semibold mb-2">Key Characteristics</h3>
+        <ul class="list-disc list-inside space-y-1">
+          <li><strong>Color:</strong> Golden brown (Ceylon) to dark reddish-brown (Cassia)</li>
+          <li><strong>Flavor:</strong> Sweet, warm, and woody</li>
+          <li><strong>Active Compound:</strong> Cinnamaldehyde</li>
+          <li><strong>Aroma:</strong> Sweet and spicy</li>
+          <li><strong>Essential Oil Content:</strong> 0.5%–1%</li>
+        </ul>
+      </div>
+
+      <div class="mb-6">
+        <h3 class="text-xl font-semibold mb-2">Popular Varieties of Cinnamon</h3>
+        <ul class="list-disc list-inside space-y-1">
+          <li><strong>Ceylon Cinnamon (Sri Lanka):</strong> Known as "True Cinnamon", light color, delicate flavor.</li>
+          <li><strong>Cassia Cinnamon (China/Indonesia):</strong> Darker, stronger flavor, higher cinnamaldehyde content.</li>
+          <li><strong>Saigon Cinnamon (Vietnam):</strong> Very sweet and spicy, high oil content, premium variety.</li>
+          <li><strong>Korintje Cinnamon (Indonesia):</strong> Common in the U.S., milder flavor, used in baking.</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold mb-2">Types Based on Form</h3>
+        <ul class="list-disc list-inside space-y-1">
+          <li><strong>Quills (Sticks):</strong> Rolled pieces of bark, used in teas, desserts, and curries.</li>
+          <li><strong>Ground Cinnamon:</strong> Fine powder form, easy to use in baking and spice blends.</li>
+          <li><strong>Cinnamon Oil:</strong> Extracted from bark/leaves; used in aromatherapy and medicine.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Navigation to Next Spice -->
+  <div class="max-w-5xl mx-auto px-4 mt-4 text-right">
+    <a href="turmeric.html" class="text-yellow-600 hover:text-yellow-800 hover:underline text-sm">
+      Next Spice →
+    </a>
+  </div>
+
+  <!-- Contact Section -->
+  <section class="bg-white mt-12 p-8 shadow-inner max-w-3xl mx-auto rounded-xl">
+    <h3 class="text-2xl font-semibold text-center text-yellow-700 mb-6">📬 Contact Us</h3>
+    <div class="text-center text-gray-700">
+      <p>If you have any inquiries or need assistance, feel free to reach out to us directly:</p>
+      <p class="mt-2">
+        <strong>Email:</strong>
+        <a href="mailto:vertexventureinc@gmail.com" class="text-yellow-600 hover:underline">vertexventureinc@gmail.com</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mt-10 text-center p-4 text-gray-500 text-sm">
+    &copy; 2025 Spices By Vertex Ventures Inc. All rights reserved.
+  </footer>
+
+</body>
+</html>

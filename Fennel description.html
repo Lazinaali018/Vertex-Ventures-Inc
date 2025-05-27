@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spices By Vertex Ventures Inc</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="bg-yellow-50 font-sans text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-yellow-100 p-6 shadow-md">
+    <h1 class="text-3xl font-bold text-center text-yellow-700">
+      <a href="index.html" class="hover:underline hover:text-yellow-800">
+        🌿 Spices By Vertex Ventures Inc
+      </a>
+    </h1>
+    <p class="text-center text-sm text-gray-600">Pure | Aromatic | Authentic</p>
+  </header>  
+
+  <!-- Back to Home Link -->
+  <div class="max-w-5xl mx-auto mt-6 px-4">
+    <a href="index.html" class="text-yellow-600 hover:text-yellow-800 hover:underline text-sm">
+      ← Back to Home
+    </a>
+  </div>
+
+  <!-- Container -->
+  <section class="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-10 items-start">
+
+    <!-- Carousel Section -->
+    <div x-data="{
+      images: [
+        'product images/fennel-2617_640.jpg',
+      ],
+      current: 0
+    }" class="relative" x-init="$nextTick(() => setInterval(() => current = (current + 1) % images.length, 5000))">
+      <div class="bg-white p-4 rounded-xl shadow-md">
+        <img :src="images[current]" alt="Fennel" class="rounded-xl w-full h-96 object-cover transition duration-500 ease-in-out">
+      </div>
+
+      <!-- Carousel Controls -->
+      <div class="flex justify-center items-center mt-4 space-x-4">
+        <!-- Left -->
+        <button @click="current = current === 0 ? images.length - 1 : current - 1"
+                class="bg-yellow-300 text-yellow-800 p-2 rounded-full shadow hover:bg-yellow-400 transition">
+          &#8592;
+        </button>
+
+        <!-- Dots -->
+        <div class="flex space-x-2">
+          <template x-for="(img, index) in images" :key="index">
+            <button @click="current = index"
+                    :class="{'bg-yellow-600': current === index, 'bg-yellow-300': current !== index}"
+                    class="w-3 h-3 rounded-full transition-colors duration-200"></button>
+          </template>
+        </div>
+
+        <!-- Right -->
+        <button @click="current = (current + 1) % images.length"
+                class="bg-yellow-300 text-yellow-800 p-2 rounded-full shadow hover:bg-yellow-400 transition">
+          &#8594;
+        </button>
+      </div>
+    </div>
+
+    <!-- Content Section -->
+    <div>
+      <h2 class="text-2xl font-bold text-green-700 mb-4">Fennel Seed (Foeniculum vulgare Mill.) – Overview & Description</h2>
+
+      <h3 class="font-semibold mt-4">Description:</h3>
+      <p class="mb-4">Fennel is the dried seed of <em>Foeniculum vulgare</em>, a flavorful herb in the Apiaceae family. It has a sweet, anise-like flavor and is widely used in culinary, medicinal, and aromatic applications. The seeds are small, greenish-yellow, and ridged.</p>
+
+      <ul class="list-disc list-inside space-y-1">
+        <li><strong>Scientific Name:</strong> Foeniculum vulgare</li>
+        <li><strong>Family:</strong> Apiaceae (Umbelliferae)</li>
+        <li><strong>Origin:</strong> Mediterranean region</li>
+        <li><strong>Plant Type:</strong> Herbaceous, biennial or perennial</li>
+        <li><strong>Plant Height:</strong> 1.5–2.5 meters</li>
+        <li><strong>Seed Characteristics:</strong> Small, oblong, greenish-yellow, ridged</li>
+        <li><strong>Essential Oil Content:</strong> 2–6% (mainly anethole and fenchone)</li>
+        <li><strong>Soil & Climate:</strong> Loamy to sandy soil, cool and dry weather, temperate to subtropical climate</li>
+      </ul>
+
+      <h3 class="font-semibold mt-6">Key Characteristics:</h3>
+      <ul class="list-disc list-inside space-y-1">
+        <li><strong>Color:</strong> Greenish-yellow</li>
+        <li><strong>Shape:</strong> Small, oblong, and ridged</li>
+        <li><strong>Flavor:</strong> Sweet, anise-like</li>
+        <li><strong>Aroma:</strong> Strong and pleasant, due to anethole</li>
+      </ul>
+
+      <h3 class="font-semibold mt-6">Common Uses:</h3>
+      <ul class="list-disc list-inside space-y-1">
+        <li><strong>Culinary:</strong> Used in spice blends, breads, curries, and teas</li>
+        <li><strong>Medicinal:</strong> Helps with digestion, bloating, and gas</li>
+        <li><strong>Essential Oils:</strong> Used in perfumes, flavorings, and herbal medicine</li>
+      </ul>
+
+      <h3 class="font-semibold mt-6">Health Benefits:</h3>
+      <ul class="list-disc list-inside space-y-1">
+        <li>Aids digestion and soothes the gastrointestinal tract</li>
+        <li>Helps relieve bloating and indigestion</li>
+        <li>Contains powerful antioxidants and anti-inflammatory compounds</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="bg-white mt-12 p-8 shadow-inner max-w-3xl mx-auto rounded-xl">
+    <h3 class="text-2xl font-semibold text-center text-yellow-700 mb-6">📬 Contact Us</h3>
+    <div class="text-center text-gray-700">
+      <p>If you have any inquiries or need assistance, feel free to reach out to us directly:</p>
+      <p class="mt-2">
+        <strong>Email:</strong> 
+        <a href="mailto:vertexventureinc@gmail.com" class="text-yellow-600 hover:underline">vertexventureinc@gmail.com</a>
+      </p>
+    </div>
+  </section>  
+
+  <!-- Footer -->
+  <footer class="mt-10 text-center p-4 text-gray-500 text-sm">
+    &copy; 2025 Spices By Vertex Ventures Inc. All rights reserved.
+  </footer>
+
+</body>
+</html>

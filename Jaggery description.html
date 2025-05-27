@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jaggery - Spices By Vertex Ventures Inc</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="bg-yellow-50 font-sans text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-yellow-100 p-6 shadow-md">
+    <h1 class="text-3xl font-bold text-center text-yellow-700">
+      <a href="index.html" class="hover:underline hover:text-yellow-800">
+        🌿 Spices By Vertex Ventures Inc
+      </a>
+    </h1>
+    <p class="text-center text-sm text-gray-600">Pure | Aromatic | Authentic</p>
+  </header>  
+
+  <!-- Back to Home Link -->
+  <div class="max-w-5xl mx-auto mt-6 px-4">
+    <a href="index.html" class="text-yellow-600 hover:text-yellow-800 hover:underline text-sm">
+      ← Back to Home
+    </a>
+  </div>
+
+  <!-- Main Section -->
+  <section class="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-10 items-start">
+
+    <!-- Image/Carousel -->
+    <div x-data="{
+      images: ['product images/Jaggery.png'],
+      current: 0
+    }" class="relative" x-init="$nextTick(() => setInterval(() => current = (current + 1) % images.length, 5000))">
+      <div class="bg-white p-4 rounded-xl shadow-md">
+        <img :src="images[current]" alt="Jaggery" class="rounded-xl w-full h-96 object-cover transition duration-500 ease-in-out">
+      </div>
+
+      <!-- Controls -->
+      <div class="flex justify-center items-center mt-4 space-x-4">
+        <button @click="current = current === 0 ? images.length - 1 : current - 1"
+                class="bg-yellow-300 text-yellow-800 p-2 rounded-full shadow hover:bg-yellow-400 transition">
+          &#8592;
+        </button>
+        <div class="flex space-x-2">
+          <template x-for="(img, index) in images" :key="index">
+            <button @click="current = index"
+                    :class="{'bg-yellow-600': current === index, 'bg-yellow-300': current !== index}"
+                    class="w-3 h-3 rounded-full transition-colors duration-200"></button>
+          </template>
+        </div>
+        <button @click="current = (current + 1) % images.length"
+                class="bg-yellow-300 text-yellow-800 p-2 rounded-full shadow hover:bg-yellow-400 transition">
+          &#8594;
+        </button>
+      </div>
+    </div>
+
+    <!-- Text Content -->
+    <div>
+      <h2 class="text-2xl font-bold text-yellow-800 mb-4">🍯 Jaggery (Gur) – A Natural Sweetener from Nature</h2>
+
+      <h3 class="font-semibold mt-4">🌾 What is Jaggery?</h3>
+      <p class="mb-4">Jaggery, also known as "Gur" in India, is a traditional, unrefined sweetener made by boiling the juice of sugarcane, palm sap, or date palm sap until it solidifies into blocks or syrup. Unlike white sugar, jaggery is rich in minerals and retains its natural goodness.</p>
+
+      <ul class="list-disc list-inside space-y-1">
+        <li><strong>Scientific Names:</strong> Saccharum officinarum (Sugarcane), Borassus flabellifer (Palm)</li>
+        <li><strong>Color:</strong> Golden brown to dark brown 🌕🌑</li>
+        <li><strong>Taste:</strong> Deep caramel-like flavor with a hint of molasses 🍬</li>
+      </ul>
+
+      <h3 class="font-semibold mt-6">💪 Nutritional Benefits</h3>
+      <ul class="list-disc list-inside space-y-1">
+        <li>✅ Rich in iron, calcium, and magnesium</li>
+        <li>✅ Boosts energy naturally ⚡</li>
+        <li>✅ Aids in digestion and acts as a detoxifier</li>
+        <li>✅ Contains antioxidants that support immunity</li>
+      </ul>
+
+      <h3 class="font-semibold mt-6">🌿 Types of Jaggery by Raw Material</h3>
+      <ul class="list-disc list-inside space-y-2">
+        <li><strong>1️⃣ Sugarcane Jaggery:</strong> Made from sugarcane juice, used in sweets, drinks, and Ayurvedic remedies</li>
+        <li><strong>2️⃣ Palm Jaggery (Karupatti):</strong> Extracted from palm sap, darker, richer in minerals, considered premium</li>
+        <li><strong>3️⃣ Date Palm Jaggery (Nolen Gur):</strong> Seasonal winter delicacy, unique aroma, popular in Bengal & Bangladesh</li>
+      </ul>
+
+      <h3 class="font-semibold mt-6">🧊 Types of Jaggery by Texture & Form</h3>
+      <ul class="list-disc list-inside space-y-2">
+        <li><strong>🔲 Solid Jaggery (Block Form):</strong> Most common form, used in sweets, chikki, cooking</li>
+        <li><strong>🔹 Powdered Jaggery:</strong> Crushed, dissolves easily, great for beverages</li>
+        <li><strong>💧 Liquid Jaggery (Kakvi):</strong> Syrupy form, popular in Ayurvedic drinks</li>
+      </ul>
+
+      <h3 class="font-semibold mt-6">🇮🇳 Famous Jaggery Varieties in India</h3>
+      <ul class="list-disc list-inside space-y-2">
+        <li><strong>🥇 Kolhapur Jaggery (Maharashtra):</strong> Light golden, rich taste, used in sweets like puran poli & chikki</li>
+        <li><strong>🌾 Mandya Jaggery (Karnataka):</strong> Soft texture, high sucrose, common in South Indian dishes</li>
+        <li><strong>🌱 Uttarakhand Organic Jaggery:</strong> Dark brown, grown organically, used in medicinal diets</li>
+        <li><strong>🌴 Tamil Nadu Karupatti:</strong> Dark brown, deep caramel taste, used in Siddha & Ayurveda</li>
+        <li><strong>❄️ Bengal Nolen Gur:</strong> Light golden, aromatic, key to Sandesh & Rasgulla</li>
+        <li><strong>🌾 Punjab Desi Gur:</strong> Medium brown, handcrafted, added to winter drinks like gur wali chai</li>
+        <li><strong>🌿 Marayoor Jaggery (Kerala):</strong> Unique flavor, dark brown, Ayurvedic use</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="bg-white mt-12 p-8 shadow-inner max-w-3xl mx-auto rounded-xl">
+    <h3 class="text-2xl font-semibold text-center text-yellow-700 mb-6">📬 Contact Us</h3>
+    <div class="text-center text-gray-700">
+      <p>If you have any inquiries or need assistance, feel free to reach out to us directly:</p>
+      <p class="mt-2">
+        <strong>Email:</strong> 
+        <a href="mailto:vertexventureinc@gmail.com" class="text-yellow-600 hover:underline">vertexventureinc@gmail.com</a>
+      </p>
+    </div>
+  </section>  
+
+  <!-- Footer -->
+  <footer class="mt-10 text-center p-4 text-gray-500 text-sm">
+    &copy; 2025 Spices By Vertex Ventures Inc. All rights reserved.
+  </footer>
+
+</body>
+</html>

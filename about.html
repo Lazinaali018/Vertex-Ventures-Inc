@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us - Spices By Vertex Ventures Inc</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-yellow-50 text-gray-800">
+
+  <!-- Top Header Line -->
+  <div class="bg-yellow-700 text-yellow-100 text-sm py-2 px-4 text-center">
+    📣 World wide shipping! | Email: <a href="mailto:vertexventureinc@gmail.com" class="underline hover:text-white">vertexventureinc@gmail.com</a>
+  </div>
+
+  <!-- Main Header -->
+  <header class="bg-white shadow sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-wrap items-center justify-between gap-4">
+
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center space-x-2 flex-shrink-0">
+        <img src="LOGO__VERTEX_VENTURES.png" alt="Logo" class="h-14 w-auto" />
+        <span class="font-bold text-yellow-800 text-xl">Spices by Vertex Ventures Inc</span>
+      </a>
+
+      <!-- Navigation Links (flex-wrap for responsiveness) -->
+      <nav class="flex flex-wrap gap-4 text-sm text-gray-700 justify-center flex-grow md:flex-grow-0 md:space-x-6">
+        <a href="index.html" class="hover:text-yellow-800 hover:underline">Home</a>
+        <a href="about.html" class="hover:text-yellow-800 hover:underline">About</a>
+        <a href="licence.html" class="hover:text-yellow-800 hover:underline">Licenses</a>
+        <a href="privacy.html" class="hover:text-yellow-800 hover:underline">Privacy Policy</a>
+        <a href="Terms and Conditions.html" class="hover:text-yellow-800 hover:underline">Terms & Conditions</a>
+        <a href="contact.html" class="hover:text-yellow-800 hover:underline">Contact</a>
+      </nav>
+
+      <!-- Search Bar -->
+      <form onsubmit="return handleSearch(event)" class="flex items-center space-x-2 w-full max-w-xs md:max-w-none md:w-auto">
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="Search"
+          required
+          class="flex-grow px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-400"
+        />
+        <button type="submit" aria-label="Search" class="bg-yellow-400 hover:bg-yellow-600 px-3 py-2 rounded">
+          <img src="search-bar-icon-png-16.jpg" alt="Search Icon" class="h-5 w-5" />
+        </button>
+      </form>
+
+    </div>
+  </header>
+
+  <!-- About Us Section -->
+  <section class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <h2 class="text-center text-yellow-700 text-3xl font-semibold mb-8">About Us</h2>
+
+    <div class="text-center max-w-3xl mx-auto text-lg text-gray-700 space-y-4">
+      <p>
+        At Spices by Vertex Ventures Inc, we are committed to delivering uncompromised high-quality spices directly sourced from trusted, sustainable farms. Our extensive industry experience empowers us to offer a wide range of spices that meet the highest standards of quality, flavor, and aroma.
+      </p>
+      <p>
+        From farm-to-table, we ensure every batch is carefully harvested, processed, and packaged to maintain maximum freshness and taste, while exceeding our customers' expectations with every delivery.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-yellow-700 text-yellow-100 pt-10 pb-6 mt-16">
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 border-b border-yellow-600 pb-6">
+      <!-- Social Media -->
+      <div>
+        <h5 class="uppercase font-bold mb-4">Follow Us</h5>
+        <a href="https://www.linkedin.com/company/vertex-ventures-inc/posts/?feedView=all" class="hover:underline">LinkedIn</a>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h5 class="uppercase font-bold mb-4">Quick Links</h5>
+        <a href="about.html" class="block hover:text-white hover:translate-x-1 transition">About</a>
+        <a href="licence.html" class="block hover:text-white hover:translate-x-1 transition">Licenses</a>
+        <a href="privacy.html" class="block hover:text-white hover:translate-x-1 transition">Privacy Policy</a>
+        <a href="Terms and Conditions.html" class="block hover:text-white hover:translate-x-1 transition">Terms & Conditions</a>
+        <a href="contact.html" class="block hover:text-white hover:translate-x-1 transition">Contact</a>
+      </div>
+
+      <!-- Branding Info -->
+      <div>
+        <h5 class="uppercase font-bold mb-4">Spices By Vertex Ventures Inc</h5>
+        <p>Delivering quality spices with care & trust.</p>
+        <p>Email: <a href="mailto:vertexventureinc@gmail.com" class="underline hover:text-white">vertexventureinc@gmail.com</a></p>
+      </div>
+    </div>
+    <p class="text-center mt-6 text-sm">&copy; 2025 Spices By Vertex Ventures Inc. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function handleSearch(event) {
+      event.preventDefault();
+      const query = document.getElementById('searchInput').value.trim();
+      if (query) {
+        alert('Search is currently disabled. You searched for: ' + query);
+      }
+    }
+  </script>
+</body>
+</html>
