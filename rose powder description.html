@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rose Powder - Spices By Vertex Ventures Inc</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="bg-yellow-50 font-sans text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-yellow-100 p-6 shadow-md">
+    <h1 class="text-3xl font-bold text-center text-yellow-700">
+      <a href="index.html" class="hover:underline hover:text-yellow-900">
+        🌿 Spices By Vertex Ventures Inc
+      </a>
+    </h1>
+    <p class="text-center text-sm text-gray-600">Pure | Aromatic | Authentic</p>
+  </header>  
+
+  <!-- Back to Home Link -->
+  <div class="max-w-5xl mx-auto mt-6 px-4">
+    <a href="index.html" class="text-yellow-600 hover:text-yellow-900 hover:underline text-sm">
+      ← Back to Home
+    </a>
+  </div>
+
+  <!-- Main Section -->
+  <section class="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-10 items-start">
+
+    <!-- Image/Carousel -->
+    <div x-data="{
+      images: ['product images/rose powder.jpg','product images/some-pink-make-up-powder.jpg'],
+      current: 0
+    }" class="relative" x-init="$nextTick(() => setInterval(() => current = (current + 1) % images.length, 5000))">
+      <div class="bg-white p-4 rounded-xl shadow-md">
+        <img :src="images[current]" alt="Rose Powder" class="rounded-xl w-full h-96 object-cover transition duration-500 ease-in-out">
+      </div>
+
+      <!-- Controls -->
+      <div class="flex justify-center items-center mt-4 space-x-4">
+        <button @click="current = current === 0 ? images.length - 1 : current - 1"
+                class="bg-yellow-300 text-yellow-800 p-2 rounded-full shadow hover:bg-yellow-400 transition">
+          &#8592;
+        </button>
+        <div class="flex space-x-2">
+          <template x-for="(img, index) in images" :key="index">
+            <button @click="current = index"
+                    :class="{'bg-yellow-600': current === index, 'bg-yellow-300': current !== index}"
+                    class="w-3 h-3 rounded-full transition-colors duration-200"></button>
+          </template>
+        </div>
+        <button @click="current = (current + 1) % images.length"
+                class="bg-yellow-300 text-yellow-800 p-2 rounded-full shadow hover:bg-yellow-400 transition">
+          &#8594;
+        </button>
+      </div>
+    </div>
+
+    <!-- Text Content -->
+    <div>
+      <h2 class="text-2xl font-bold text-yellow-800 mb-4">🌹 Rose Powder – Cosmetic Grade</h2>
+
+      <h3 class="font-semibold mt-4">📌 Product Overview</h3>
+      <p class="mb-4">Rose Powder is a premium natural skincare ingredient made from finely milled rose petals. Known for its soothing, hydrating, and anti-inflammatory qualities, it is widely used in cosmetics for its gentle action on sensitive skin and its pleasant, natural aroma. Rich in vitamins and antioxidants, rose powder enhances the quality and effectiveness of beauty formulations.</p>
+
+      <h3 class="font-semibold mt-6">🌟 Key Features</h3>
+      <ul class="list-disc list-inside space-y-1">
+        <li><strong>100% Natural & Organic:</strong> Derived from pesticide-free, high-quality rose petals for a chemical-free experience.</li>
+        <li><strong>Nutrient-Rich:</strong> High in Vitamin C, Vitamin A, and antioxidants to rejuvenate and protect the skin.</li>
+        <li><strong>Hydrating & Soothing:</strong> Calms irritated skin and helps retain natural moisture.</li>
+        <li><strong>Anti-Inflammatory:</strong> Reduces redness, acne-related inflammation, and skin irritation.</li>
+        <li><strong>Mild Fragrance:</strong> Naturally aromatic with a subtle rose scent that enhances product appeal.</li>
+      </ul>
+
+      <h3 class="font-semibold mt-6">💄 Cosmetic Benefits</h3>
+      <ul class="list-disc list-inside space-y-1">
+        <li><strong>Complexion Brightening:</strong> Promotes radiant skin by gently removing dead skin cells.</li>
+        <li><strong>Anti-Aging Support:</strong> Boosts collagen production, reducing fine lines and wrinkles.</li>
+        <li><strong>Acne Management:</strong> Natural antibacterial properties combat acne and prevent breakouts.</li>
+        <li><strong>Deep Moisturization:</strong> Retains skin hydration and promotes softness.</li>
+        <li><strong>Gentle Exfoliation:</strong> Can be combined with honey, yogurt, or milk to create nourishing, exfoliating masks.</li>
+      </ul>
+
+      <h3 class="font-semibold mt-6">🧴 Common Applications</h3>
+      <ul class="list-disc list-inside space-y-1">
+        <li><strong>Facial Masks:</strong> For hydration, detox, and skin tone balance.</li>
+        <li><strong>Creams & Lotions:</strong> Adds soothing, skin-repairing properties.</li>
+        <li><strong>Exfoliating Products:</strong> A gentle yet effective natural scrub base.</li>
+        <li><strong>Lip Care:</strong> Ideal for lip balms and scrubs with a natural rosy scent.</li>
+        <li><strong>Hair Masks:</strong> Soothes the scalp and adds shine to hair.</li>
+      </ul>
+
+      <h3 class="font-semibold mt-6">📦 Product Specifications</h3>
+      <ul class="list-disc list-inside space-y-1">
+        <li><strong>Appearance:</strong> Fine, smooth powder in shades of light pink to rose.</li>
+        <li><strong>Purity:</strong> 100% pure with no additives or fillers.</li>
+        <li><strong>Shelf Life:</strong> 1–2 years (store in a cool, dry place, away from sunlight).</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="bg-white mt-12 p-8 shadow-inner max-w-3xl mx-auto rounded-xl">
+    <h3 class="text-2xl font-semibold text-center text-yellow-700 mb-6">📬 Contact Us</h3>
+    <div class="text-center text-gray-700">
+      <p>If you have any inquiries or need assistance, feel free to reach out to us directly:</p>
+      <p class="mt-2">
+        <strong>Email:</strong> 
+        <a href="mailto:vertexventureinc@gmail.com" class="text-yellow-600 hover:underline">vertexventureinc@gmail.com</a>
+      </p>
+    </div>
+  </section>  
+
+  <!-- Footer -->
+  <footer class="mt-10 text-center p-4 text-gray-500 text-sm">
+    &copy; 2025 Spices By Vertex Ventures Inc. All rights reserved.
+  </footer>
+
+</body>
+</html>

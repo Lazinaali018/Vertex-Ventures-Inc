@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spices By Vertex Ventures Inc</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <style>
+    @media (max-width: 768px) {
+      img {
+        height: auto !important;
+        max-height: 400px;
+      }
+    }
+  </style>
+</head>
+<body class="bg-yellow-50 font-sans text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-yellow-100 p-6 shadow-md">
+    <h1 class="text-3xl font-bold text-center text-yellow-700">
+      <a href="index.html" class="hover:underline hover:text-yellow-800">
+        🌿 Spices By Vertex Ventures Inc
+      </a>
+    </h1>
+    <p class="text-center text-sm text-gray-600">Pure | Aromatic | Authentic</p>
+  </header>  
+
+  <!-- Back to Home Link -->
+  <div class="max-w-5xl mx-auto mt-6 px-4">
+    <a href="index.html" class="text-yellow-600 hover:text-yellow-800 hover:underline text-sm">
+      ← Back to Home
+    </a>
+  </div>
+
+  <!-- Container -->
+  <section class="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+
+    <!-- Carousel Section -->
+    <div x-data="{
+      images: [
+        'product images/peppercorns-3914937.jpg',
+        'product images/black pepper.jpg',
+        'product images/pepper-3914936.jpg'
+      ],
+      current: 0
+    }" class="relative" x-init="$nextTick(() => setInterval(() => current = (current + 1) % images.length, 5000))">
+      <div class="bg-white p-4 rounded-xl shadow-md">
+        <img :src="images[current]" alt="Black Pepper" class="rounded-xl w-full h-96 object-cover transition duration-500 ease-in-out">
+      </div>
+
+      <!-- Carousel Controls -->
+      <div class="flex justify-center items-center mt-4 space-x-4">
+        <button @click="current = current === 0 ? images.length - 1 : current - 1"
+                class="bg-yellow-300 text-yellow-800 p-2 rounded-full shadow hover:bg-yellow-400 transition">
+          &#8592;
+        </button>
+        <div class="flex space-x-2">
+          <template x-for="(img, index) in images" :key="index">
+            <button @click="current = index"
+                    :class="{'bg-yellow-600': current === index, 'bg-yellow-300': current !== index}"
+                    class="w-3 h-3 rounded-full transition-colors duration-200"></button>
+          </template>
+        </div>
+        <button @click="current = (current + 1) % images.length"
+                class="bg-yellow-300 text-yellow-800 p-2 rounded-full shadow hover:bg-yellow-400 transition">
+          &#8594;
+        </button>
+      </div>
+    </div>
+
+    <!-- Product Description -->
+    <div>
+      <h2 class="text-2xl font-bold text-yellow-700 mb-4">Black Pepper (Piper nigrum) – Overview & Varieties</h2>
+
+      <div class="mb-6">
+        <h3 class="text-xl font-semibold mb-2">Introduction</h3>
+        <p>Widely known as the <strong>“King of Spices”</strong>, Black Pepper is a globally treasured spice derived from the dried, unripe berries of the <em>Piper nigrum</em> plant. Its sharp flavor, aroma, and medicinal benefits make it essential in kitchens and traditional medicine worldwide.</p>
+        <ul class="list-disc list-inside mt-2 space-y-1">
+          <li><strong>Scientific Name:</strong> <em>Piper nigrum</em></li>
+          <li><strong>Family:</strong> Piperaceae</li>
+          <li><strong>Native Origin:</strong> Western Ghats, India</li>
+          <li><strong>Leading Producing Countries:</strong> India, Vietnam, Indonesia, Brazil, Sri Lanka, Malaysia</li>
+          <li><strong>Major Indian Producing States:</strong> Kerala, Karnataka, Tamil Nadu, Assam, Tripura</li>
+          <li><strong>Harvesting Season:</strong> December to March</li>
+        </ul>
+      </div>
+
+      <div class="mb-6">
+        <h3 class="text-xl font-semibold mb-2">Key Characteristics</h3>
+        <ul class="list-disc list-inside space-y-1">
+          <li><strong>Color:</strong> Dark brown to black</li>
+          <li><strong>Flavor:</strong> Bold, pungent, and spicy</li>
+          <li><strong>Active Compound:</strong> Piperine</li>
+          <li><strong>Aroma:</strong> Warm and woody</li>
+          <li><strong>Essential Oil Content:</strong> 2%–4%</li>
+        </ul>
+      </div>
+
+      <div class="mb-6">
+        <h3 class="text-xl font-semibold mb-2">Popular Varieties of Black Pepper</h3>
+        <ul class="list-disc list-inside space-y-1">
+          <li><strong>Malabar Pepper (India):</strong> Medium berries, strong aroma, export-quality.</li>
+          <li><strong>Tellicherry Pepper (India):</strong> Large bold berries, premium spice, gourmet use.</li>
+          <li><strong>Panniyur Pepper (India):</strong> Large berries, high yield, culinary & medicinal use.</li>
+          <li><strong>Karimunda (India):</strong> Small, aromatic berries; ideal for organic farming.</li>
+          <li><strong>Kottanadan (India):</strong> Medium size, highly pungent; used in spice blends.</li>
+          <li><strong>Wayanad Pepper (India):</strong> Bold grains, high oil; top export quality.</li>
+          <li><strong>Lampong Pepper (Indonesia):</strong> Small, smoky, pungent; used in Asian cuisine.</li>
+          <li><strong>Sarawak Pepper (Malaysia):</strong> Mild, light brown; used in soups and sauces.</li>
+          <li><strong>Brazilian Black Pepper (Brazil):</strong> Large, moderate pungency; for food processing.</li>
+          <li><strong>Vietnamese Black Pepper (Vietnam):</strong> High yield, commercial-grade exports.</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold mb-2">Types Based on Processing</h3>
+        <ul class="list-disc list-inside space-y-1">
+          <li><strong>Black Pepper:</strong> Dried unripe berries; pungent and aromatic; used in spice mixes & medicine.</li>
+          <li><strong>White Pepper:</strong> Ripe berries with outer skin removed; milder taste; perfect for sauces and soups.</li>
+          <li><strong>Green Pepper:</strong> Unripe berries preserved; fresh, mild taste; used in gourmet recipes.</li>
+          <li><strong>Red (Pink) Pepper:</strong> Fully ripe dried berries; mildly sweet; used in gourmet foods.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="bg-white mt-12 p-8 shadow-inner max-w-3xl mx-auto rounded-xl">
+    <h3 class="text-2xl font-semibold text-center text-yellow-700 mb-6">📬 Contact Us</h3>
+    <div class="text-center text-gray-700">
+      <p>If you have any inquiries or need assistance, feel free to reach out to us directly:</p>
+      <p class="mt-2">
+        <strong>Email:</strong> 
+        <a href="mailto:vertexventureinc@gmail.com" class="text-yellow-600 hover:underline">vertexventureinc@gmail.com</a>
+      </p>
+    </div>
+  </section>  
+
+  <!-- Footer -->
+  <footer class="mt-10 text-center p-4 text-gray-500 text-sm">
+    &copy; 2025 Spices By Vertex Ventures Inc. All rights reserved.
+  </footer>
+</body>
+</html>

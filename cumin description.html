@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spices By Vertex Ventures Inc</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="bg-yellow-50 font-sans text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-yellow-100 p-6 shadow-md">
+    <h1 class="text-3xl font-bold text-center text-yellow-700">
+      <a href="index.html" class="hover:underline hover:text-yellow-800">
+        🌿 Spices By Vertex Ventures Inc
+      </a>
+    </h1>
+    <p class="text-center text-sm text-gray-600">Pure | Aromatic | Authentic</p>
+  </header>  
+
+  <!-- Back to Home Link -->
+  <div class="max-w-5xl mx-auto mt-6 px-4">
+    <a href="index.html" class="text-yellow-600 hover:text-yellow-800 hover:underline text-sm">
+      ← Back to Home
+    </a>
+  </div>
+
+  <!-- Container -->
+  <section class="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-10 items-start">
+
+    <!-- Carousel Section -->
+    <div x-data="{
+      images: [
+        'product images/cumin.jpg',
+        'product images/cumin-5377176.jpg',
+      ],
+      current: 0
+    }" class="relative" x-init="$nextTick(() => setInterval(() => current = (current + 1) % images.length, 5000))">
+      <div class="bg-white p-4 rounded-xl shadow-md">
+        <img :src="images[current]" alt="Cumin" class="rounded-xl w-full h-96 object-cover transition duration-500 ease-in-out">
+      </div>
+
+      <!-- Carousel Controls -->
+      <div class="flex justify-center items-center mt-4 space-x-4">
+        <!-- Left -->
+        <button @click="current = current === 0 ? images.length - 1 : current - 1"
+                class="bg-yellow-300 text-yellow-800 p-2 rounded-full shadow hover:bg-yellow-400 transition">
+          &#8592;
+        </button>
+
+        <!-- Dots -->
+        <div class="flex space-x-2">
+          <template x-for="(img, index) in images" :key="index">
+            <button @click="current = index"
+                    :class="{'bg-yellow-600': current === index, 'bg-yellow-300': current !== index}"
+                    class="w-3 h-3 rounded-full transition-colors duration-200"></button>
+          </template>
+        </div>
+
+        <!-- Right -->
+        <button @click="current = (current + 1) % images.length"
+                class="bg-yellow-300 text-yellow-800 p-2 rounded-full shadow hover:bg-yellow-400 transition">
+          &#8594;
+        </button>
+      </div>
+    </div>
+
+    <!-- Content Section -->
+    <div>
+      <h2 class="text-2xl font-bold text-yellow-700 mb-4">Cumin (Cuminum cyminum L.) – Overview & Varieties</h2>
+
+      <h3 class="font-semibold mt-4">Description:</h3>
+      <p class="mb-4">Cumin is the dried seed of <em>Cuminum cyminum</em>, a herbaceous annual plant from the Apiaceae family. Known for its strong, earthy flavor and aromatic profile, cumin is widely used in culinary, medicinal, and essential oil applications.</p>
+
+      <ul class="list-disc list-inside space-y-1">
+        <li><strong>Scientific Name:</strong> Cuminum cyminum</li>
+        <li><strong>Family:</strong> Apiaceae (Umbelliferae)</li>
+        <li><strong>Origin:</strong> Mediterranean region</li>
+        <li><strong>Plant Type:</strong> Herbaceous annual</li>
+        <li><strong>Plant Height:</strong> 30–50 cm</li>
+        <li><strong>Seed Characteristics:</strong> Elongated, ridged, light brown</li>
+        <li><strong>Essential Oil Content:</strong> 2.5–5% (rich in cuminaldehyde)</li>
+        <li><strong>Soil & Climate:</strong> Sandy loam soil, cool and dry climate</li>
+        <li><strong>Sowing Time:</strong> October–November</li>
+        <li><strong>Harvesting:</strong> February–March</li>
+      </ul>
+
+      <h3 class="font-semibold mt-6">Key Characteristics:</h3>
+      <ul class="list-disc list-inside space-y-1">
+        <li><strong>Color:</strong> Light to yellowish-brown</li>
+        <li><strong>Shape:</strong> Elongated, ridged seeds</li>
+        <li><strong>Flavor:</strong> Warm, earthy, slightly bitter</li>
+        <li><strong>Aroma:</strong> Strong and aromatic due to cuminaldehyde</li>
+      </ul>
+
+      <h3 class="font-semibold mt-6">Common Uses:</h3>
+      <ul class="list-disc list-inside space-y-1">
+        <li><strong>Culinary:</strong> Used in spice blends, curries, soups, and stews</li>
+        <li><strong>Medicinal:</strong> Promotes digestion and relieves inflammation</li>
+        <li><strong>Essential Oils:</strong> Used in perfumes and traditional medicines</li>
+      </ul>
+
+      <h3 class="font-semibold mt-6">Health Benefits:</h3>
+      <ul class="list-disc list-inside space-y-1">
+        <li>Improves digestion and reduces bloating</li>
+        <li>Excellent source of iron</li>
+        <li>Rich in antioxidants</li>
+      </ul>
+
+      <h3 class="font-semibold mt-6">Popular Varieties of Cumin:</h3>
+      <ul class="list-disc list-inside space-y-3">
+        <li><strong>Gujarat Cumin 4 (GC-4):</strong>
+          <ul class="ml-4 list-disc space-y-1">
+            <li>Yield: 700–900 kg/ha</li>
+            <li>Maturity: 120–130 days</li>
+            <li>Resistance: Tolerant to wilt and blight</li>
+            <li>Seeds: Medium-sized, high oil content</li>
+          </ul>
+        </li>
+        <li><strong>Gujarat Cumin 1 (GC-1):</strong>
+          <ul class="ml-4 list-disc space-y-1">
+            <li>Yield: 500–700 kg/ha</li>
+            <li>Maturity: 110–120 days</li>
+            <li>Resistance: Moderate to Fusarium wilt</li>
+            <li>Seeds: Light brown, medium-sized</li>
+          </ul>
+        </li>
+        <li><strong>RZ-19:</strong>
+          <ul class="ml-4 list-disc space-y-1">
+            <li>Yield: 800–1000 kg/ha</li>
+            <li>Maturity: 120 days</li>
+            <li>Resistance: Resistant to wilt and blight</li>
+            <li>Seeds: Long and bold, high oil content</li>
+          </ul>
+        </li>
+        <li><strong>RZ-209:</strong>
+          <ul class="ml-4 list-disc space-y-1">
+            <li>Yield: 850–1050 kg/ha</li>
+            <li>Maturity: 125 days</li>
+            <li>Resistance: Tolerant to wilt and powdery mildew</li>
+            <li>Seeds: Large-sized, darker seeds</li>
+          </ul>
+        </li>
+        <li><strong>RZ-223:</strong>
+          <ul class="ml-4 list-disc space-y-1">
+            <li>Yield: 900–1100 kg/ha</li>
+            <li>Maturity: 130 days</li>
+            <li>Resistance: Resistant to Fusarium wilt and blight</li>
+            <li>Seeds: Long, bold seeds</li>
+          </ul>
+        </li>
+        <li><strong>RS-1:</strong>
+          <ul class="ml-4 list-disc space-y-1">
+            <li>Yield: 750–950 kg/ha</li>
+            <li>Maturity: 120 days</li>
+            <li>Resistance: Moderate to wilt and powdery mildew</li>
+            <li>Seeds: Medium-sized, yellowish-brown</li>
+          </ul>
+        </li>
+        <li><strong>S-404:</strong>
+          <ul class="ml-4 list-disc space-y-1">
+            <li>Yield: 950–1200 kg/ha</li>
+            <li>Maturity: 125–130 days</li>
+            <li>Resistance: Highly resistant to Fusarium wilt</li>
+            <li>Seeds: Large, bold, high essential oil content</li>
+          </ul>
+        </li>
+        <li><strong>MC-43:</strong>
+          <ul class="ml-4 list-disc space-y-1">
+            <li>Yield: 650–900 kg/ha</li>
+            <li>Maturity: 110–115 days</li>
+            <li>Resistance: Wilt-resistant</li>
+            <li>Seeds: Medium-sized, light brown</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="bg-white mt-12 p-8 shadow-inner max-w-3xl mx-auto rounded-xl">
+    <h3 class="text-2xl font-semibold text-center text-yellow-700 mb-6">📬 Contact Us</h3>
+    <div class="text-center text-gray-700">
+      <p>If you have any inquiries or need assistance, feel free to reach out to us directly:</p>
+      <p class="mt-2">
+        <strong>Email:</strong> 
+        <a href="mailto:vertexventureinc@gmail.com" class="text-yellow-600 hover:underline">vertexventureinc@gmail.com</a>
+      </p>
+    </div>
+  </section>  
+
+  <!-- Footer -->
+  <footer class="mt-10 text-center p-4 text-gray-500 text-sm">
+    &copy; 2025 Spices By Vertex Ventures Inc. All rights reserved.
+  </footer>
+
+</body>
+</html>

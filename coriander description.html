@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spices By Vertex Ventures Inc</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="bg-yellow-50 font-sans text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-yellow-100 p-6 shadow-md">
+    <h1 class="text-3xl font-bold text-center text-yellow-700">
+      <a href="index.html" class="hover:underline hover:text-yellow-800">
+        🌿 Spices By Vertex Ventures Inc
+      </a>
+    </h1>
+    <p class="text-center text-sm text-gray-600">Pure | Aromatic | Authentic</p>
+  </header>  
+
+  <!-- Back to Home Link -->
+  <div class="max-w-5xl mx-auto mt-6 px-4">
+    <a href="index.html" class="text-yellow-600 hover:text-yellow-800 hover:underline text-sm">
+      ← Back to Home
+    </a>
+  </div>
+
+  <!-- Container -->
+  <section class="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-10 items-start">
+
+    <!-- Carousel Section -->
+    <div x-data="{
+      images: [
+        'product images/coriander-166989.jpg',
+        'product images/coriander.jpg',
+        'product images/coriander-5749130.jpg'
+      ],
+      current: 0
+    }" class="relative" x-init="$nextTick(() => setInterval(() => current = (current + 1) % images.length, 5000))">
+      <div class="bg-white p-4 rounded-xl shadow-md">
+        <img :src="images[current]" alt="Coriander" class="rounded-xl w-full h-96 object-cover transition duration-500 ease-in-out">
+      </div>
+
+      <!-- Carousel Controls -->
+      <div class="flex justify-center items-center mt-4 space-x-4">
+        <button @click="current = current === 0 ? images.length - 1 : current - 1"
+                class="bg-yellow-300 text-yellow-800 p-2 rounded-full shadow hover:bg-yellow-400 transition">
+          &#8592;
+        </button>
+
+        <div class="flex space-x-2">
+          <template x-for="(img, index) in images" :key="index">
+            <button @click="current = index"
+                    :class="{'bg-yellow-600': current === index, 'bg-yellow-300': current !== index}"
+                    class="w-3 h-3 rounded-full transition-colors duration-200"></button>
+          </template>
+        </div>
+
+        <button @click="current = (current + 1) % images.length"
+                class="bg-yellow-300 text-yellow-800 p-2 rounded-full shadow hover:bg-yellow-400 transition">
+          &#8594;
+        </button>
+      </div>
+    </div>
+
+    <!-- Product Description -->
+    <div>
+      <h2 class="text-2xl font-bold text-yellow-700 mb-4">Coriander (Coriandrum sativum) – Overview & Popular Varieties</h2>
+  
+      <div class="mb-6">
+        <h3 class="text-xl font-semibold mb-2">What is Coriander?</h3>
+        <p>Coriander (<em>Coriandrum sativum</em>) is an annual herb from the Apiaceae family, widely cultivated for both its fresh leaves (known as cilantro) and dried seeds. The seeds carry a warm, citrusy flavor and are key ingredients in spice mixes like garam masala and curry powder.</p>
+        <ul class="list-disc list-inside mt-2 space-y-1">
+          <li><strong>Scientific Name:</strong> <em>Coriandrum sativum</em></li>
+          <li><strong>Family:</strong> Apiaceae</li>
+          <li><strong>Origin:</strong> Mediterranean region</li>
+          <li><strong>Plant Type:</strong> Herbaceous annual</li>
+          <li><strong>Height:</strong> 50–100 cm</li>
+          <li><strong>Seed Appearance:</strong> Round, light to yellowish-brown</li>
+          <li><strong>Essential Oil Content:</strong> 0.3% – 1.0% (primarily linalool)</li>
+        </ul>
+      </div>
+  
+      <div class="mb-6">
+        <h3 class="text-xl font-semibold mb-2">Ideal Growing Conditions</h3>
+        <ul class="list-disc list-inside space-y-1">
+          <li><strong>Soil:</strong> Well-drained sandy loam</li>
+          <li><strong>Climate:</strong> Cool and dry</li>
+          <li><strong>Sowing Time:</strong> October–November</li>
+          <li><strong>Harvesting Time:</strong> February–March</li>
+        </ul>
+      </div>
+  
+      <div>
+        <h3 class="text-xl font-semibold mb-2">Popular Coriander Varieties in India</h3>
+        <ul class="list-disc list-inside space-y-2">
+          <li><strong>Co.1 (Coimbatore 1):</strong> Developed by Tamil Nadu Agricultural University, matures in 90–100 days, yield 8–10 quintals/ha, light brown medium-sized seeds, moderate pest resistance.</li>
+          <li><strong>Co.2 (Coimbatore 2):</strong> Matures in 100–110 days, yield 10–12 quintals/ha, bold seeds with strong aroma, tolerant to powdery mildew.</li>
+          <li><strong>Co.3 (Coimbatore 3):</strong> Matures in 90–100 days, yield 10–12 quintals/ha, medium-sized seeds with high oil content, wilt resistant.</li>
+          <li><strong>CS 287:</strong> Developed by Rajasthan Agricultural University, matures in 110–120 days, yield 12–14 quintals/ha, small golden-yellow seeds, fusarium wilt resistant.</li>
+          <li><strong>RCr-20:</strong> Matures in 120–130 days, yield 12–15 quintals/ha, medium-sized light brown seeds, resistant to stem gall.</li>
+          <li><strong>RCr-435:</strong> Matures in 110–120 days, yield 12–14 quintals/ha, medium-sized seeds rich in essential oil, wilt resistant.</li>
+          <li><strong>RCr-728:</strong> Matures in 100–110 days, yield 10–12 quintals/ha, bold seeds with strong aroma, resistant to aphids and powdery mildew.</li>
+          <li><strong>ACr-1:</strong> Developed by Anand Agricultural University, matures in 100–110 days, yield 12–14 quintals/ha, large aromatic seeds, resistant to stem gall and powdery mildew.</li>
+          <li><strong>AGCr-1:</strong> Matures in 110–120 days, yield 14–16 quintals/ha, small dark brown seeds, fusarium wilt resistant.</li>
+        </ul>
+      </div>
+    </div>  
+  </section>
+
+  <!-- Contact Section -->
+  <section class="bg-white mt-12 p-8 shadow-inner max-w-3xl mx-auto rounded-xl">
+    <h3 class="text-2xl font-semibold text-center text-yellow-700 mb-6">📬 Contact Us</h3>
+    <div class="text-center text-gray-700">
+      <p>If you have any inquiries or need assistance, feel free to reach out to us directly:</p>
+      <p class="mt-2">
+        <strong>Email:</strong> 
+        <a href="mailto:vertexventureinc@gmail.com" class="text-yellow-600 hover:underline">vertexventureinc@gmail.com</a>
+      </p>
+    </div>
+  </section>  
+
+  <!-- Footer -->
+  <footer class="mt-10 text-center p-4 text-gray-500 text-sm">
+    &copy; 2025 Spices By Vertex Ventures Inc. All rights reserved.
+  </footer>
+</body>
+</html>
